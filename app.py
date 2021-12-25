@@ -33,6 +33,41 @@ def Winesubmit():
         ans = model.predict(test)
         return render_template("Wineprediction.html", result=ans[0])    
 
+@app.route("/Insinput", methods=["POST", "GET"])
+def Insinput():
+    return render_template("Insinput.html")
+
+@app.route("/Inssubmit", methods=["POST", "GET"])
+def Inssubmit():
+    if request.method == "POST": 
+        # 'incident_hour_of_the_day', 'number_of_vehicles_involved', 'bodily_injuries', 'witnesses', 
+        # 'total_claim_amount', 'injury_claim', 'property_claim', 'vehicle_claim', 'auto_year']
+        months_as_customer = float(request.form['months_as_customer'])
+        age = float(request.form['age'])
+        policy_number = float(request.form['policy_number'])
+        policy_deductable = float(request.form['policy_deductable'])
+        policy_annual_premium = float(request.form['policy_annual_premium'])
+        umbrella_limit = float(request.form['umbrella_limit'])
+        insured_zip = float(request.form['insured_zip'])
+        capital_gains = float(request.form['capital-gains'])
+        capital_loss = float(request.form['capital-loss'])
+        incident_hour_of_the_day = float(request.form['incident_hour_of_the_day'])
+        number_of_vehicles_involved = float(request.form['number_of_vehicles_involved'])
+        bodily_injuries = float(request.form['bodily_injuries'])
+        witnesses = float(request.form['witnesses'])
+        total_claim_amount = float(request.form['total_claim_amount'])
+        injury_claim = float(request.form['injury_claim'])
+        property_claim = float(request.form['property_claim'])
+        vehicle_claim = float(request.form['vehicle_claim'])
+        auto_year = float(request.form['auto_year'])
+        test = [[months_as_customer, age, policy_number, policy_deductable, policy_annual_premium, 
+        umbrella_limit, insured_zip, capital_gains, capital_loss, incident_hour_of_the_day, 
+        number_of_vehicles_involved, bodily_injuries, witnesses, total_claim_amount, injury_claim, 
+        property_claim, vehicle_claim, auto_year]]
+        model = pickle.load(open("Insurance Fraud Prediction\Insurance_Fraud_model.pkl","rb"))
+        test = np.array(test)
+        ans = model.predict(test)
+        return render_template("Insprediction.html", result=ans[0])    
 
 
 if __name__ == "__main__":
