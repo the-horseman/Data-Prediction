@@ -62,7 +62,7 @@ def Inssubmit():
         umbrella_limit, insured_zip, capital_gains, capital_loss, incident_hour_of_the_day, 
         number_of_vehicles_involved, bodily_injuries, witnesses, total_claim_amount, injury_claim, 
         property_claim, vehicle_claim, auto_year]]
-        model = pickle.load(open("Insurance Fraud Prediction\Insurance_Fraud_model.pkl","rb"))
+        model = pickle.load(open("Insurance_Fraud_Prediction\Insurance_Fraud_model.pkl","rb"))
         test = np.array(test)
         ans = model.predict(test)
         if ans[0] == 0:
