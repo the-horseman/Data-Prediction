@@ -40,8 +40,6 @@ def Insinput():
 @app.route("/Inssubmit", methods=["POST", "GET"])
 def Inssubmit():
     if request.method == "POST": 
-        # 'incident_hour_of_the_day', 'number_of_vehicles_involved', 'bodily_injuries', 'witnesses', 
-        # 'total_claim_amount', 'injury_claim', 'property_claim', 'vehicle_claim', 'auto_year']
         months_as_customer = float(request.form['months_as_customer'])
         age = float(request.form['age'])
         policy_number = float(request.form['policy_number'])
@@ -67,7 +65,11 @@ def Inssubmit():
         model = pickle.load(open("Insurance Fraud Prediction\Insurance_Fraud_model.pkl","rb"))
         test = np.array(test)
         ans = model.predict(test)
-        return render_template("Insprediction.html", result=ans[0])    
+        if ans[0] == 0:
+            ans = "It is a Fraud"
+        else:
+            ans = "Not a Fraud"
+        return render_template("Insprediction.html", result=ans)    
 
 
 if __name__ == "__main__":
