@@ -28,7 +28,7 @@ def submit():
         alcohol = float(request.form['alcohol'])
         test = [[fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide,
         total_sulfur_dioxide, density, pH, sulphates, alcohol]]
-        model = pickle.load(open("Wine Quality Prediction\Wine_Quality_model.pkl","rb"))
+        model = pickle.load(open("Wine_Quality_Prediction/Wine_Quality_model.pkl","rb"))
         test = np.array(test)
         ans = model.predict(test)
         return render_template("prediction.html", result=ans[0])    
