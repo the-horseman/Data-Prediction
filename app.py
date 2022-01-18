@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
 
@@ -11,6 +11,7 @@ def fist_page():
 @app.route("/Wineinput", methods=["POST", "GET"])
 def Wineinput():
     return render_template("Wineinput.html")
+   
 
 @app.route("/Winesubmit", methods=["POST", "GET"])
 def Winesubmit():
@@ -73,4 +74,4 @@ def Inssubmit():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

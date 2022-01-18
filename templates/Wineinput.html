@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 <body>
 
-<h2>HTML Forms</h2>
+    <p class="txt1">Input Wine Attributes</p>
 
-<form action="/Winesubmit" method='post'>
-  <label for="fixed acidity">Fixed Acidity:</label><br>
-  <input type="text" id="fixed acidity" name="fixed acidity" value="0"><br>
-  <label for="volatile acidity">Volatile Acidity:</label><br>
-  <input type="text" id="volatile acidity" name="volatile acidity" value="0"><br><br>
-  <label for="citric acid">Citric Acid:</label><br>
-  <input type="text" id="citric acid" name="citric acid" value="0"><br><br>
-  <label for="residual sugar">Residual Sugar:</label><br>
-  <input type="text" id="residual sugar" name="residual sugar" value="0"><br><br>
-  <label for="chlorides">Chlorides:</label><br>
-  <input type="text" id="chlorides" name="chlorides" value="0"><br><br>
-  <label for="free sulfur dioxide">Free Sulfur Dioxide:</label><br>
-  <input type="text" id="free sulfur dioxide" name="free sulfur dioxide" value="0"><br><br>
-  <label for="total sulfur dioxide">Total Sulfur Dioxide:</label><br>
-  <input type="text" id="total sulfur dioxide" name="total sulfur dioxide" value="0"><br><br>
-  <label for="density">Density:</label><br>
-  <input type="text" id="density" name="density" value="0"><br><br>
-  <label for="pH">pH:</label><br>
-  <input type="text" id="pH" name="pH" value="0"><br><br>
-  <label for="sulphates">Sulphates:</label><br>
-  <input type="text" id="sulphates" name="sulphates" value="0"><br><br>
-  <label for="alcohol">Alcohol:</label><br>
-  <input type="text" id="alcohol" name="alcohol" value="0"><br><br>
-  <input type="submit" value="Submit">
-</form> 
+    <form class="frm1" action="/Winesubmit" method='post'>
+        <label for="fixed acidity">Fixed Acidity:</label><br>
+        <input type="text" id="fixed acidity" name="fixed acidity" value="0"><br>
+        <label for="volatile acidity">Volatile Acidity:</label><br>
+        <input type="text" id="volatile acidity" name="volatile acidity" value="0"><br><br>
+        <label for="citric acid">Citric Acid:</label><br>
+        <input type="text" id="citric acid" name="citric acid" value="0"><br><br>
+        <label for="residual sugar">Residual Sugar:</label><br>
+        <input type="text" id="residual sugar" name="residual sugar" value="0"><br><br>
+        <label for="chlorides">Chlorides:</label><br>
+        <input type="text" id="chlorides" name="chlorides" value="0"><br><br>
+        <label for="free sulfur dioxide">Free Sulfur Dioxide:</label><br>
+        <input type="text" id="free sulfur dioxide" name="free sulfur dioxide" value="0"><br><br>
+        <label for="total sulfur dioxide">Total Sulfur Dioxide:</label><br>
+        <input type="text" id="total sulfur dioxide" name="total sulfur dioxide" value="0"><br><br>
+        <label for="density">Density:</label><br>
+        <input type="text" id="density" name="density" value="0"><br><br>
+        <label for="pH">pH:</label><br>
+        <input type="text" id="pH" name="pH" value="0"><br><br>
+        <label for="sulphates">Sulphates:</label><br>
+        <input type="text" id="sulphates" name="sulphates" value="0"><br><br>
+        <label for="alcohol">Alcohol:</label><br>
+        <input type="text" id="alcohol" name="alcohol" value="0"><br><br>
+        <input type="submit" value="Submit">
+    </form>
 
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/submit".</p>
+    <p>If you click the "Submit" button, the form-data will be sent for Predictions.</p>
 
 </body>
+
 </html>

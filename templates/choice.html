@@ -1,15 +1,26 @@
 <html>
-   <head>
-     <title>Submit Button Redirect</title>  
-   </head>    
-    <body>     
-      <p>Select for Wine Quality Prediction</p>
-     <form method="POST" action="/Wineinput">  
-       <input type="submit"/>  
-     </form>    
-     <p>Select for Insurance Fraud Detection</p>
-     <form method="POST" action="/Insinput">  
-      <input type="submit"/>  
-    </form>    
-    </body>    
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<head>
+    <title>Submit Button Redirect</title>
+</head>
+
+<body>
+    <div class="container">
+        <p class="txt">Select for Wine Quality Prediction</p>
+        <a href=Wineinput><button class="button" id=Wine>Wine</button></a>
+
+        <p class="txt">Select for Insurance Fraud Detection</p>
+        <a href=Insinput><button class="button" id=Insurance>Insurance</button></a>
+    </div>
+</body>
+<script>
+    function start() {
+        console.log("HELLO");
+        fetch("/Wineinput", {
+            method: 'GET'
+        }).then()
+    }
+</script>
+
 </html>
